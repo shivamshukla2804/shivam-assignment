@@ -1,0 +1,54 @@
+<section>
+  <table *ngIf="showLoader">
+    <thead>
+      <tr>
+        <th class="name-col">S.No</th>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let review of reviewListings;let idx=index;">
+        <td>
+          <div class="content">
+            <p>{{idx+1}}</p>
+          </div>
+        </td>
+        <td>
+          <div class="content">
+            <p>{{review?.title}}</p>
+          </div>
+        </td>
+        <td>
+          <div class="content">
+            <p>{{review?.content}}</p>
+          </div>
+        </td>
+        <td>
+          <div class="date-wrap">
+            <span>{{review?.createdAt | date:'dd MMM y, hh:mm a'}}</span>
+          </div>
+        </td>
+        <td>
+          <div class="actions">
+            <button (click)="actionButton(0,review)">Edit</button>
+            <button (click)="actionButton(1,review)">Delete</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <button (click)="pageChange(0)">
+      < </button>
+        <select name="pageNo" id="pageNo" (change)="onPageChange($event.target)">
+          <option [value]="5">5</option>
+          <option [value]="10">10</option>
+          <option [value]="15">15</option>
+          <option [value]="20">20</option>
+        </select>
+        <button (click)="pageChange(1)">></button>
+  </div>
+</section>

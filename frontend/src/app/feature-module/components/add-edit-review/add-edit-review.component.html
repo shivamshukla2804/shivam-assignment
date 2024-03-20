@@ -1,0 +1,16 @@
+<section>
+  <form [formGroup]="reviewForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+      <span>Title:</span>
+      <input type="text" formControlName="title">
+    </div>
+    <div class="field">
+      <span>Content:</span>
+      <textarea [rows]="6" formControlName="content"></textarea>
+    </div>
+    <div class="btn">
+      <button type="button" (click)="cancelAction()">Cancel</button>
+      <button type="submit" [disabled]="reviewForm.invalid">{{isEdit?'Edit':'Submit'}}</button>
+    </div>
+  </form>
+</section>

@@ -1,0 +1,12 @@
+<section>
+  <header>
+    <h2>Reviews</h2>
+    <button (click)="addReview()">Add</button>
+  </header>
+  <div class="main-content">
+    <ng-container *ngIf="showAddEdit">
+      <app-add-edit-review [editData]="editReviewData" (result)="onDataEdit($event)"></app-add-edit-review>
+    </ng-container>
+    <app-table (editData)="editData($event)" [update]=""></app-table>
+  </div>
+</section>

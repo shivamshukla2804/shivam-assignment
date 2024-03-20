@@ -1,0 +1,60 @@
+section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  table {
+    width: 80%;
+    border: 1px solid black;
+    text-align: center;
+    border-collapse: collapse;
+    background-color: white;
+    th {
+      border-bottom: 1px solid black;
+      padding: 12px;
+    }
+    tr {
+      padding: 10px;
+      &:nth-child(even) {
+        background-color: #dfdede;
+      }
+    }
+    td {
+      padding: 10px;
+      button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        border-bottom: 1px solid transparent;
+        &:first-child {
+          color: green;
+          &:hover {
+            border-bottom: 1px solid green;
+          }
+        }
+        &:last-child {
+          color: red;
+          &:hover {
+            border-bottom: 1px solid red;
+          }
+        }
+      }
+    }
+  }
+  .pagination {
+    width: 80%;
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px;
+    button {
+      background-color: white;
+      width: 30px;
+      border: none;
+      cursor: pointer;
+      height: 30px;
+      margin: 0 8px;
+      border-radius: 50%;
+    }
+  }
+}
